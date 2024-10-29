@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Option</title>
+  
+  <style>
+    body {
+      background: url('background1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(8, 8, 8, 0.5);
+    }
+    header h1, h2 {
+      color: white;
+    }
+    main {
+      padding: 20px;
+    }
+    #payment {
+      background-color:rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    form div {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: white;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 5px;
+    }
+    .payment-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #fff;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      display: block;
+      margin: 20px auto 0;
+    }
+    button:hover {
+      background-color: #ccc;
+    }
+    .online-payment-fields, .cod-address-fields {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Payment Options</h1>
+  </header>
+  <main>
+    <section id="payment">
+      <h2>Complete Your Purchase</h2>
+      <form id="paymentForm">
+        <!-- Payment Method Selection -->
+        <div class="payment-options">
+          <label>
+            <input type="radio" name="payment-method" value="online" onclick="handlePaymentSelection()"> Online Payment (Credit/Debit Card)
+          </label>
+          <label>
+            <input type="radio" name="payment-method" value="gpay" onclick="handlePaymentSelection()"> Google Pay (GPay)
+          </label>
+          <label>
+            <input type="radio" name="payment-method" value="phonepe" onclick="handlePaymentSelection()"> PhonePe
+          </label>
+          <label>
+            <input type="radio" name="payment-method" value="paytm" onclick="handlePaymentSelection()"> Paytm
+          </label>
+          <label>
+            <input type="radio" name="payment-method" value="cod" onclick="handlePaymentSelection()"> Cash on Delivery (COD)
+          </label>
+        </div>
+
+        <!-- Card Payment Fields (Only show if 'online' is selected) -->
+        <div class="online-payment-fields" id="onlinePaymentFields">
+          <div>
+            <label for="name-on-card">Name on Card:</label>
+            <input type="text" id="name-on-card">
+          </div>
+          <div>
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number">
+          </div>
+          <div>
+            <label for="expiry-date">Expiry Date:</label>
+            <input type="text" id="expiry-date" placeholder="MM/YY">
+          </div>
+          <div>
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv">
+          </div>
+        </div>
+        
+        <!-- COD Address Fields (Only show if 'cod' is selected) -->
+        <div class="cod-address-fields" id="codAddressFields">
+          <h3>Delivery Address for Cash on Delivery</h3>
+          <div>
+            <label for="delivery-address">Address:</label>
+            <input type="text" id="delivery-address" required>
+          </div>
+          <div>
+            <label for="delivery-city">City:</label>
+            <input type="text" id="delivery-city" required>
+          </div>
+          <div>
+            <label for="delivery-state">State:</label>
+            <input type="text" id="delivery-state" required>
+          </div>
+          <div>
+            <label for="delivery-pin">Pin-Code:</label>
+            <input type="text" id="delivery-pin" required>
+          </div>
+          <div>
+            <label for="delivery-country">Country:</label>
+            <input type="text" id="delivery-country" required>
+          </div>
+        </div>
+
+        <button type="button" onclick="submitPayment()">Proceed with Payment</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    function handlePaymentSelection() {
+      const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+      const onlineFields = document.getElementById('onlinePaymentFields');
+      const codFields = document.getElementById('codAddressFields');
+      
+      if (paymentMethod === "online") {
+        onlineFields.style.display = "block";
+        codFields.style.display = "none";
+      } else if (paymentMethod === "cod") {
+        codFields.style.display = "block";
+        onlineFields.style.display = "none";
+      } else {
+        onlineFields.style.display = "none";
+        codFields.style.display = "none";
+      }
+    }
+
+    function submitPayment() {
+      const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+      
+      if (paymentMethod === "cod") {
+        alert("Cash on Delivery selected. Your order will be processed and delivered to the specified address.");
+      } else if (paymentMethod === "gpay") {
+        window.location.href = "https://pay.google.com";
+      } else if (paymentMethod === "phonepe") {
+        window.location.href = "https://www.phonepe.com";
+      } else if (paymentMethod === "paytm") {
+        window.location.href = "https://paytm.com";
+      } else if (paymentMethod === "online") {
+        document.getElementById("paymentForm").submit();  // Submit form for online payment
+      } else {
+        alert("Please select a payment method.");
+      }
+    }
+  </script>
+</body>
+</html>
