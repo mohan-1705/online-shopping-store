@@ -4,6 +4,7 @@
     cartItems.push({ name, price });
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
     alert(`${name} added to cart.`);
+    window.location.href = 'cart.html';
   }
 
   function buyNow(name, price) {
