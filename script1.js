@@ -1,11 +1,14 @@
-function addToCart(product, price) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push({ product, price });
-    localStorage.setItem("cart", JSON.stringify(cart));
-    alert(`${product} added to cart!`);
-}
+<script>
+  function addToCart(name, price) {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    cartItems.push({ name, price });
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    alert(`${name} added to cart.`);
+  }
 
-function buyNow(product, price) {
-    addToCart(product, price);
-    window.location.href = "cart.html";
-}
+  function buyNow(name, price) {
+    const cartItems = [{ name, price }]; // Direct purchase item as a new array
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    window.location.href = 'payment.html';
+  }
+</script>
