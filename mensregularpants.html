@@ -3,129 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Men's Regular Casual Pants</title>
+    <title>Men's Regular Pants</title>
+    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles2.css">
+    <style>
+        /* Custom styles */
+        .container {
+            padding-top: 20px;
+        }
+        .card {
+            border: none;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            max-height: 200px;
+            object-fit: cover;
+        }
+        .btn-custom {
+            width: 48%;
+        }
+        .price {
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-4">
-        <h1 class="text-center text-primary mb-4">Men's Regular Casual Pants</h1>
-        <div class="row">
-            <!-- Pants Item 1 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="download (1).jpg" class="card-img-top" alt="Casual Pant 1">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Casual Pant </h5>
-                        <p class="card-text">$34.99</p>
-                        <button class="btn btn-primary" onclick="addToCart('Casual Pant ', 34.99)">Add to Cart</button>
-                        <button class="btn btn-success" onclick="buyNow('Casual Pant ', 34.99)">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-            <!-- Repeat the block for each pants item -->
-            <!-- Pants Item 2 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="download (2).jpg" class="card-img-top" alt="Casual Pant 2">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Casual Pant </h5>
-                        <p class="card-text">$36.99</p>
-                        <button class="btn btn-primary" onclick="addToCart('Casual Pant ', 36.99)">Add to Cart</button>
-                        <button class="btn btn-success" onclick="buyNow('Casual Pant ', 36.99)">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-            <!-- Add additional pants items following the same structure until Pant Item 10 -->
-            <!-- Pants Item 3 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="download (3).jpg" class="card-img-top" alt="Casual Pant 2">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Casual Pant </h5>
-                        <p class="card-text">$21.99</p>
-                        <button class="btn btn-primary" onclick="addToCart('Casual Pant ', 21.99)">Add to Cart</button>
-                        <button class="btn btn-success" onclick="buyNow('Casual Pant ', 21.99)">Buy Now</button>
-            
-                    </div>
-                </div>
-            </div>
-            <!-- Pants Item 4 -->
-                <div class="col-md-4 mb-4">
-                   <div class="card">
-                   <img src="download (4).jpg" class="card-img-top" alt="Casual Pant 2">
-                        <div class="card-body text-center">
-                       <h5 class="card-title">Casual Pant </h5>
-                       <p class="card-text">$72.99</p>
-                       <button class="btn btn-primary" onclick="addToCart('Casual Pant ', 72.99)">Add to Cart</button>
-                        <button class="btn btn-success" onclick="buyNow('Casual Pant ', 72.99)">Buy Now</button>
-                         </div>
-                    </div>
-                </div>
-            <!-- Pants Item 5 -->
-            <div class="col-md-4 mb-4">
-               <div class="card">
-               <img src="download (5).jpg" class="card-img-top" alt="Casual Pant 2">
-                   <div class="card-body text-center">
-                        <h5 class="card-title">Casual Pant </h5>
-                       <p class="card-text">$24.99</p>
-                       <button class="btn btn-primary" onclick="addToCart('Casual Pant ', 24.99)">Add to Cart</button>
-                        <button class="btn btn-success" onclick="buyNow('Casual Pant ', 24.99)">Buy Now</button>
-                   </div>
-                 </div>
-            </div>
-        <!-- Pants Item 6 -->
-            <div class="col-md-4 mb-4">
-               <div class="card">
-               <img src="download (6).jpg" class="card-img-top" alt="Casual Pant 2">
-                   <div class="card-body text-center">
-                       <h5 class="card-title">Casual Pant </h5>
-                       <p class="card-text">$28.99</p>
-                       <button class="btn btn-primary" onclick="addToCart('Casual Pant ', 28.99)">Add to Cart</button>
-                       <button class="btn btn-success" onclick="buyNow('Casual Pant ', 28.99)">Buy Now</button>
-                  </div>
-              </div>
-            </div>
-        <!-- Pants Item 7 -->
-             <div class="col-md-4 mb-4">
-               <div class="card">
-                   <img src="download (7).jpg" class="card-img-top" alt="Casual Pant 2">
-                   <div class="card-body text-center">
-                      <h5 class="card-title">Casual Pant </h5>
-                       <p class="card-text">$73.99</p>
-                       <button class="btn btn-primary" onclick="addToCart('Casual Pant ', 73.99)">Add to Cart</button>
-                        <button class="btn btn-success" onclick="buyNow('Casual Pant ', 73.99)">Buy Now</button>
-                    </div>
-               </div>
-            </div>
-        <!-- Pants Item 8 -->
-             <div class="col-md-4 mb-4">
-               <div class="card">
-                  <img src="images (1).jpg" class="card-img-top" alt="Casual Pant 2">
-                  <div class="card-body text-center">
-                       <h5 class="card-title">Casual Pant </h5>
-                       <p class="card-text">$49.99</p>
-                       <button class="btn btn-primary" onclick="addToCart('Casual Pant ', 49.99)">Add to Cart</button>
-                       <button class="btn btn-success" onclick="buyNow('Casual Pant ', 49.99)">Buy Now</button>
-                   </div>
-               </div>
-            </div>
-        <!-- Pants Item 9 -->
-            <div class="col-md-4 mb-4">
-               <div class="card">
-                <img src="images.jpg"class="card-img-top" alt="Casual Pant 2">
-                 <div class="card-body text-center">
-                   <h5 class="card-title">Casual Pant </h5>
-                   <p class="card-text">$62.99</p>
-                <button class="btn btn-primary" onclick="addToCart('Casual Pant ', 62.99)">Add to Cart</button>
-                <button class="btn btn-success" onclick="buyNow('Casual Pant ', 62.99)">Buy Now</button>
-                </div>
-           </div>
-    </div>
 
+<div class="container">
+    <h1 class="text-center mb-4">Men's Regular Pants</h1>
+    <div class="row">
+        <!-- pants Cards -->
+     
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="download (1).jpg" class="card-img-top" alt="Shoe {{ i }}">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Casual Pant</h5>
+                    <p class="price">$59.99</p>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary btn-custom">Add to Cart</button>
+                        <button class="btn btn-success btn-custom">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div><div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="download (2).jpg" class="card-img-top" alt="Shoe {{ i }}">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Casual Pant</h5>
+                    <p class="price">$29.99</p>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary btn-custom">Add to Cart</button>
+                        <button class="btn btn-success btn-custom">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div><div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="download (3).jpg" class="card-img-top" alt="Shoe {{ i }}">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Casual Pant</h5>
+                    <p class="price">$49.99</p>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary btn-custom">Add to Cart</button>
+                        <button class="btn btn-success btn-custom">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div><div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="download (4).jpg" class="card-img-top" alt="Shoe {{ i }}">
+                <div class="card-body text-center">
+                    <h5 class="card-title"> Casual Pant</h5>
+                    <p class="price">$99.99</p>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary btn-custom">Add to Cart</button>
+                        <button class="btn btn-success btn-custom">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div><div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="download (5).jpg" class="card-img-top" alt="Shoe {{ i }}">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Casual Pant</h5>
+                    <p class="price">$79.99</p>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary btn-custom">Add to Cart</button>
+                        <button class="btn btn-success btn-custom">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div><div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="download (6).jpg" class="card-img-top" alt="Shoe {{ i }}">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Casual Pant</h5>
+                    <p class="price">$67.99</p>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary btn-custom">Add to Cart</button>
+                        <button class="btn btn-success btn-custom">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div><div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="download (7).jpg" class="card-img-top" alt="Shoe {{ i }}">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Casual Pant</h5>
+                    <p class="price">$34.99</p>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary btn-custom">Add to Cart</button>
+                        <button class="btn btn-success btn-custom">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div><div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="images (1).jpg" class="card-img-top" alt="Shoe {{ i }}">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Casual Pant</h5>
+                    <p class="price">$65.99</p>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary btn-custom">Add to Cart</button>
+                        <button class="btn btn-success btn-custom">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div><div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="images.jpg" class="card-img-top" alt="Shoe {{ i }}">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Casual Pant</h5>
+                    <p class="price">$43.99</p>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary btn-custom">Add to Cart</button>
+                        <button class="btn btn-success btn-custom">Buy Now</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <script src="script2.js"></script>
+</div>
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
