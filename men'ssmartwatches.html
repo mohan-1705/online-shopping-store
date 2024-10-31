@@ -193,7 +193,9 @@
                 let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
                 cartItems.push({ name: itemName, price: itemPrice });
                 localStorage.setItem('cartItems', JSON.stringify(cartItems));
-                alert(`${itemName} has been added to your cart.`);
+                alert(`${itemName} has been added to your cart.`);  
+                window.location.href = 'cart.html';
+
             });
         });
 
