@@ -152,5 +152,63 @@
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get all "Add to Cart" buttons
+        const addToCartButtons = document.querySelectorAll('.btn-primary');
+
+        // Add click event to each button
+        addToCartButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                // Find item details
+                const itemCard = button.closest('.card');
+                const itemName = itemCard.querySelector('.card-title').textContent;
+                const itemPrice = itemCard.querySelector('.price').textContent;
+
+                // Retrieve cart items from localStorage or initialize empty array
+                let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+                // Add new item to cart
+                cartItems.push({ name: itemName, price: itemPrice });
+
+                // Save updated cart to localStorage
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+                alert(`${itemName} has been added to your cart.`);
+            });
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get all "Add to Cart" buttons
+        const addToCartButtons = document.querySelectorAll('.btn-primary');
+        const buyNowButtons = document.querySelectorAll('.btn-success');
+
+        // Add to Cart functionality
+        addToCartButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                const itemCard = button.closest('.card');
+                const itemName = itemCard.querySelector('.card-title').textContent;
+                const itemPrice = itemCard.querySelector('.price').textContent;
+                let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                cartItems.push({ name: itemName, price: itemPrice });
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                alert(`${itemName} has been added to your cart.`);
+            });
+        });
+
+        // Buy Now functionality
+        buyNowButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const itemCard = button.closest('.card');
+                const itemName = itemCard.querySelector('.card-title').textContent;
+                const itemPrice = itemCard.querySelector('.price').textContent;
+                localStorage.setItem('buyNowItem', JSON.stringify({ name: itemName, price: itemPrice }));
+                window.location.href = 'payment.html';
+            });
+        });
+    });
+</script>    
 </body>
 </html>
