@@ -40,6 +40,7 @@ main {
 
 section {
   margin-bottom: 40px;
+  color:black;
 }
 
 h2 {
@@ -111,7 +112,9 @@ h2 {
 .product p {
   color: black;
 }
-
+.p{
+  color: black;
+}
 button {
   background-color: black;
   color:white;
@@ -176,6 +179,7 @@ main {
 
 form div {
   margin-bottom: 15px;
+  color: black;
 }
 
 form label {
