@@ -159,17 +159,26 @@
         const buyNowButtons = document.querySelectorAll('.btn-success');
 
         // Add to Cart functionality
-        addToCartButtons.forEach((button, index) => {
+        addToCartButtons.forEach((button) => {
             button.addEventListener('click', () => {
                 const itemCard = button.closest('.card');
                 const itemName = itemCard.querySelector('.card-title').textContent;
                 const itemPrice = itemCard.querySelector('.price').textContent;
+
+                // Get current cart items
                 let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-                cartItems.push({ name: itemName, price: itemPrice });
-                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+                // Check if item already exists in the cart
+                const itemExists = cartItems.some(item => item.name === itemName);
+
+                // Add item if it doesn't exist already
+                if (!itemExists) {
+                    cartItems.push({ name: itemName, price: itemPrice });
+                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                }
+
+                // Redirect to cart page
                 window.location.href = 'cart.html';
-
-
             });
         });
 
@@ -185,5 +194,6 @@
         });
     });
 </script>
+
 </body>
 </html>
