@@ -89,8 +89,8 @@ h2 {
 }
 
 .product {
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: black;
+  border: 1px solid white;
   padding: 10px;
   text-align: center;
   width: 200px;
@@ -109,11 +109,11 @@ h2 {
 }
 
 .product p {
-  color: #555;
+  color: black;
 }
 
 button {
-  background-color: #333;
+  background-color: black;
   color:white;
   border: none;
   padding: 10px;
@@ -161,7 +161,7 @@ main {
 #payment {
   max-width: 500px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: black;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -169,8 +169,8 @@ main {
 
 #payment h2 {
   margin-bottom: 20px;
-  color: #333;
-  border-bottom: 2px solid #333;
+  color: white;
+  border-bottom: 2px solid black;
   padding-bottom: 5px;
 }
 
@@ -193,8 +193,8 @@ form input {
 }
 
 button {
-  background-color: #333;
-  color: #fff;
+  background-color: black;
+  color: white;
   border: none;
   padding: 10px;
   cursor: pointer;
