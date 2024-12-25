@@ -174,9 +174,11 @@
         window.location.href = "https://www.phonepe.com";
       } else if (paymentMethod === "paytm") {
         window.location.href = "https://paytm.com";
-      } else if (paymentMethod === "online") {
+      } else if (paymentMethod === "razorpay") {
+        window.location.href = "https://razorpay.com/";
+      }else if (paymentMethod === "online") {
         document.getElementById("paymentForm").submit();  // Submit form for online payment
-      } else {
+      }else {
         alert("Please select a payment method.");
       }
     }
