@@ -7,10 +7,6 @@ img {
   border: 5px solid #555;
 }
 
-img:hover {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-}
 
 h1, h2 {
     font-weight: bold;
