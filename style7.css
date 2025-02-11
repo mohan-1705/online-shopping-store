@@ -7,10 +7,6 @@ body {
       color: #333;
     }
 
-img:hover {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-}
 
 
 img:hover {
