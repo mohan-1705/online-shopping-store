@@ -83,6 +83,11 @@ img:hover {
   font-size: 1em;
   transition: background-color 0.3s, color 0.3s;
 }
+ /* Removing dots from a specific class */
+.no-dots {
+  list-style-type: none;
+  padding-left: 0;
+  }
 
 .add-to-cart {
   background-color: #e57373;
