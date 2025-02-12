@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shirt Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        .product-container {
+            display: flex;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 100%;
+        }
+        .product-image {
+            width: 50%;
+        }
+        .product-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product-details {
+            width: 50%;
+            padding: 20px;
+        }
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .price {
+            font-size: 20px;
+            color: #e60000;
+            margin: 10px 0;
+        }
+        .description {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .sizes label {
+            font-weight: bold;
+        }
+        .sizes select {
+            padding: 5px;
+            margin: 10px 0;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .buttons button {
+            width: 48%;
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .add-to-cart {
+            background: #000;
+            color: white;
+        }
+        .buy-now {
+            background: #ff6600;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-container">
+        <div class="product-image">
+            <img src="download9.jpg" alt="Men's Casual Shirt">
+        </div>
+        <div class="product-details">
+            <div class="product-title">Men's Regular Formal Shirt</div>
+            <div class="price">$29.99</div>
+            <div class="description">
+                This premium quality cotton shirt is designed for comfort and style. Perfect for casual outings and formal occasions, it offers a stylish look with a breathable fabric that keeps you comfortable all day long.
+            </div>
+            <div class="sizes">
+                <label for="size">Select Size:</label>
+                <select id="size">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                </select>
+            </div>
+            <div class="buttons">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const addToCartButton = document.querySelector('.add-to-cart');
+            const buyNowButton = document.querySelector('.buy-now');
+
+            addToCartButton.addEventListener('click', () => {
+                const itemName = document.querySelector('.product-title').textContent;
+                const itemPrice = document.querySelector('.price').textContent;
+                const selectedSize = document.querySelector('#size').value;
+
+                let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                const itemExists = cartItems.some(item => item.name === itemName && item.size === selectedSize);
+
+                if (!itemExists) {
+                    cartItems.push({ name: itemName, price: itemPrice, size: selectedSize });
+                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                }
+
+                window.location.href = "cart.html";
+            });
+
+            buyNowButton.addEventListener('click', () => {
+                const itemName = document.querySelector('.product-title').textContent;
+                const itemPrice = document.querySelector('.price').textContent;
+                const selectedSize = document.querySelector('#size').value;
+
+                localStorage.setItem('buyNowItem', JSON.stringify({ name: itemName, price: itemPrice, size: selectedSize }));
+                window.location.href = "payment.html";
+            });
+        });
+    </script>
+</body>
+</html>
