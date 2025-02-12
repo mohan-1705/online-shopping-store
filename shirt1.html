@@ -80,7 +80,7 @@
 <body>
     <div class="product-container">
         <div class="product-image">
-            <img src="C:\Users\mohan\Downloads\download8.jpg" alt="Men's Casual Shirt">
+            <img src="download8.jpg" alt="Men's Casual Shirt">
         </div>
         <div class="product-details">
             <div class="product-title">Men's Regular Formal Shirt</div>
@@ -123,7 +123,7 @@
                     localStorage.setItem('cartItems', JSON.stringify(cartItems));
                 }
 
-                window.location.href = "file:///C:/Users/mohan/Downloads/cart.html";
+                window.location.href = "cart.html";
             });
 
             buyNowButton.addEventListener('click', () => {
@@ -132,7 +132,7 @@
                 const selectedSize = document.querySelector('#size').value;
 
                 localStorage.setItem('buyNowItem', JSON.stringify({ name: itemName, price: itemPrice, size: selectedSize }));
-                window.location.href = "file:///C:/Users/mohan/OneDrive/Documents/E-commerceWebsite/payment.html";
+                window.location.href = "payment.html";
             });
         });
     </script>
