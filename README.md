@@ -3,13 +3,6 @@
 A fully responsive and visually engaging **Online Shopping Store** built using HTML, CSS, and JavaScript. This project simulates a modern e-commerce website where users can explore, browse, and interact with a variety of fashion and grocery items.
 
 ---
-
-## 🔗 Live Demo
-
-🌐 Visit here: [Online Shopping Store](https://mohan-1705.github.io/online-shopping-store/)
-
----
-
 ## ✨ Features
 
 ### 🛒 Shopping Experience
